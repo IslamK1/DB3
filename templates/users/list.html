@@ -1,0 +1,16 @@
+<!doctype html>
+<html><head><title>Users</title></head><body>
+<h1>Users</h1>
+<a href="{{ url_for('users_new') }}">Create new user</a>
+<table border="1">
+  <tr><th>ID</th><th>Name</th><th>Email</th><th>City</th></tr>
+  {% for u in users %}
+  <tr>
+    <td>{{ u.user_id }}</td>
+    <td>{{ u.given_name }} {{ u.surname }}</td>
+    <td>{{ u.email }}</td>
+    <td>{{ u.city }}</td>
+  </tr>
+  {% endfor %}
+</table>
+</body></html>

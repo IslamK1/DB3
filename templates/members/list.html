@@ -1,0 +1,15 @@
+<!doctype html>
+<html><head><title>Members</title></head><body>
+<h1>Members</h1>
+<a href="{{ url_for('members_new') }}">Create member</a>
+<table border="1">
+  <tr><th>ID</th><th>Name</th><th>House rules</th></tr>
+  {% for m in members %}
+  <tr>
+    <td>{{ m.member_user_id }}</td>
+    <td>{{ m.user.given_name }} {{ m.user.surname }}</td>
+    <td>{{ m.house_rules }}</td>
+  </tr>
+  {% endfor %}
+</table>
+</body></html>

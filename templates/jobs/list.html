@@ -1,0 +1,17 @@
+<!doctype html>
+<html><head><title>Jobs</title></head><body>
+<h1>Jobs</h1>
+<a href="{{ url_for('jobs_new') }}">Create job</a>
+<table border="1">
+  <tr><th>ID</th><th>Member ID</th><th>Type</th><th>Requirements</th><th>Date</th></tr>
+  {% for j in jobs %}
+  <tr>
+    <td>{{ j.job_id }}</td>
+    <td>{{ j.member_user_id }}</td>
+    <td>{{ j.required_caregiving_type }}</td>
+    <td>{{ j.other_requirements }}</td>
+    <td>{{ j.date_posted }}</td>
+  </tr>
+  {% endfor %}
+</table>
+</body></html>

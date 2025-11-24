@@ -1,0 +1,16 @@
+<!doctype html>
+<html><head><title>Caregivers</title></head><body>
+<h1>Caregivers</h1>
+<a href="{{ url_for('caregivers_new') }}">Create caregiver</a>
+<table border="1">
+  <tr><th>ID</th><th>Name</th><th>Type</th><th>Rate</th></tr>
+  {% for c in caregivers %}
+  <tr>
+    <td>{{ c.caregiver_user_id }}</td>
+    <td>{{ c.user.given_name }} {{ c.user.surname }}</td>
+    <td>{{ c.caregiving_type }}</td>
+    <td>{{ c.hourly_rate }}</td>
+  </tr>
+  {% endfor %}
+</table>
+</body></html>

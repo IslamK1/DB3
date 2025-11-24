@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><title>Appointments</title></head><body>
+<h1>Appointments</h1>
+<a href="{{ url_for('appointments_new') }}">Create appointment</a>
+<table border="1">
+  <tr><th>ID</th><th>Caregiver</th><th>Member</th><th>Date</th><th>Time</th><th>Hours</th><th>Status</th></tr>
+  {% for a in appointments %}
+  <tr>
+    <td>{{ a.appointment_id }}</td>
+    <td>{{ a.caregiver_user_id }}</td>
+    <td>{{ a.member_user_id }}</td>
+    <td>{{ a.appointment_date }}</td>
+    <td>{{ a.appointment_time }}</td>
+    <td>{{ a.work_hours }}</td>
+    <td>{{ a.status }}</td>
+  </tr>
+  {% endfor %}
+</table>
+</body></html>
